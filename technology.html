@@ -59,39 +59,42 @@
     <div class="details clearfix">
         <div class="left-content">
             <h1 class="scrollTopPx" id="1">系统架构图及简要说明</h1>
+            <p style="text-align:center;margin:20px 0"><img src="img/wljg.png" alt=""></p>
 
-           <p>
-               本系统是基于 C/S架构的虚拟教学平台，其系统架构如图 10所示，由学生端、教师端、网络同步模块以及数据库模块构成，服务器部分代码采用 C#语言编写。学生端包括学习模块和考核模块，教师端包括在线指导模块和后台管理模块。学生端和教师端之间是通过网络同步模块进行数据同步控制，保证学生和老师可以同时对一个物体进行操作学习和指导。系统采用 MongoDB数据库，并采用缓存技术来提升访问速度。客户端支持 PC端，对应的有 VR版本和非 VR版本，通过互动伺服器实现和平台的数据交互，以及实现不同终端之间互动教学。
-           </p>
+            <p>1、应用支撑平台：应用支撑平台主要包括应用开发平台（基础数据管理，报表管理，工作流管理，表单工具等等）和中间件（应用服务器、消息中间件、Web 服务器）。通过建设应用支撑虚拟实验仿真平台，实现界面集成，应用集成，数据以及流程集成。通过四个集成达到郭伟所有系统集成效果</p>
+            <p>2、综合分析层：由真实数据出发，通过软件模拟实现情景再现， 对数据进行采集，优化，进一步完善数据处理工作。</p>
+            <p>3、业务实现层：通过采集好的数据，上传至虚拟实验仿真平台。通过虚拟实验平台，进行模拟地震实验，然后进一步采集数据，获取</p>
+
+            <p>实验现象以及结果，最终对实验结果进行现象分析，完成实验</p>
 
             <h1 class="scrollTopPx" id="2">实验教学项目</h1>
 
             <h2>开发技术</h2>
 
             <ul>
-                <li><p>· VR</p></li>
-                <li><p>· AR</p></li>
-                <li><p>· MR</p></li>
-                <li><p>· 3D仿真</p></li>
-                <li><p>· 二维动画</p></li>
-                <li><p>· HTML5</p></li>
+                <li><p>·√ VR</p></li>
+                <li><p>·√ AR</p></li>
+                <li><p>·√ MR</p></li>
+                <li><p>·√ 3D仿真</p></li>
+                <li><p>·√ 二维动画</p></li>
+                <li><p>·√ HTML5</p></li>
                 <li><p>· 其它</p></li>
             </ul>
             <div style="height: 40px;"></div>
             <h2>开发工具</h2>
 
             <ul>
-                <li><p>· Unity3D  </p></li>
-                <li><p>· 3D Studio Max   </p></li>
-                <li><p>· Maya</p></li>
-                <li><p>· ZBrush  </p></li>
-                <li><p>· SketchUp </p></li>
-                <li><p>· Adobe Flash</p></li>
-                <li><p>· Unreal Development Kit</p></li>
-                <li><p>· Animate CC</p></li>
-                <li><p>· Blender </p></li>
-                <li><p>· Visual Studio</p></li>
-                <li><p>· 其他 </p></li>
+                <li><p>·√ Unity3D  </p></li>
+                <li><p>·√ 3D Studio Max   </p></li>
+                <li><p>·√ Maya</p></li>
+                <li><p>·√ ZBrush  </p></li>
+                <li><p>·√ SketchUp </p></li>
+                <li><p>·√ Adobe Flash</p></li>
+                <li><p>·√ Unreal Development Kit</p></li>
+                <li><p>·√ Animate CC</p></li>
+                <li><p>·√ Blender </p></li>
+                <li><p>·√ Visual Studio</p></li>
+                <li><p>·√ 其他 </p></li>
             </ul>
             <div style="height: 40px;"></div>
 
@@ -99,8 +102,8 @@
             <h2>运行环境</h2>
 
             <ul>
-                <li><p>· 服务器 :  CPU Intel i5、内存 4 GB、独立显存 2G、 硬盘：500G 以上</p></li>
-                <li><p>· 操作系统 :  Windows Server  </p></li>
+                <li><p>· 服务器 :  CPU  8	核、内存 16 GB、独立显存 4G、 硬盘：500G 以上</p></li>
+                <li><p>· 操作系统 :  √Windows Server √Linux   </p></li>
                 <li><p>· 数据库 ： Mysql </p></li>
             </ul>
             <div style="height: 40px;"></div>
@@ -108,12 +111,12 @@
 
             <h2>项目品质</h2>
 
-            <p>单场景模型总面数3600</p>
-            <p>贴图分辨率150dpi</p>
-            <p>每帧渲染次数25</p>
-            <p>动作反馈时间0.1ms</p>
+            <p>模型面数：12</p>
+            <p>贴图分辨率：1024*512</p>
+            <p>每帧渲染次数：2</p>
+            <p>动作反馈时间：50ms</p>
             <p>显示刷新率60hz</p>
-            <p>分辨率1920*1080</p>
+            <p>分辨率：1280*720</p>
 
         </div>
 
@@ -143,6 +146,8 @@
 									</span>
                             </a>
                         </dt>
+
+
 
                         <a class="arrow" href="javascript:void(0);"></a>
                     </dl>
@@ -208,7 +213,7 @@
     <div style="border-top: 1px dotted #9e9d9d;margin-top: 28px">
         <p>
             <span class="fl">Copyright 2019 © 武昌首义学院 　版权所有</span>
-            <span  class="fr">湖北省武汉市洪山区南李路28号</span>
+            <span  class="fr">湖北省武汉市洪山区狮子山街南李路22号</span>
         </p>
 
     </div>
