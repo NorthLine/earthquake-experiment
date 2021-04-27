@@ -93,110 +93,595 @@
 
     <div class="imgBox ">
         <style>
-            table * {
-                min-width: 87px;
+            .w-e-text-container {
+                position: relative;
+                height: 100%;
             }
+            .w-e-text-container .w-e-progress {
+                position: absolute;
+                background-color: #1e88e5;
+                top: 0;
+                left: 0;
+                height: 1px;
+            }
+            .w-e-text-container .placeholder {
+                color: #D4D4D4;
+                position: absolute;
+                font-size: 11pt;
+                line-height: 22px;
+                left: 10px;
+                top: 10px;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+                z-index: -1;
+            }
+            .w-e-text {
+                padding: 0 10px;
+                overflow-y: auto;
+            }
+            .w-e-text p,
+            .w-e-text h1,
+            .w-e-text h2,
+            .w-e-text h3,
+            .w-e-text h4,
+            .w-e-text h5,
+            .w-e-text table,
+            .w-e-text pre {
+                margin: 10px 0;
+                line-height: 1.5;
+            }
+            .w-e-text ul,
+            .w-e-text ol {
+                margin: 10px 0 10px 20px;
+            }
+            .w-e-text blockquote {
+                display: block;
+                border-left: 8px solid #d0e5f2;
+                padding: 5px 10px;
+                margin: 10px 0;
+                line-height: 1.4;
+                font-size: 100%;
+                background-color: #f1f1f1;
+            }
+            .w-e-text code {
+                display: inline-block;
+                background-color: #f1f1f1;
+                border-radius: 3px;
+                padding: 3px 5px;
+                margin: 0 3px;
+            }
+            .w-e-text pre code {
+                display: block;
+            }
+            .w-e-text table {
+                border-top: 1px solid #ccc;
+                border-left: 1px solid #ccc;
+            }
+            .w-e-text table td,
+            .w-e-text table th {
+                border-bottom: 1px solid #ccc;
+                border-right: 1px solid #ccc;
+                padding: 3px 5px;
+                min-height: 30px;
+            }
+            .w-e-text table th {
+                border-bottom: 2px solid #ccc;
+                text-align: center;
+                background-color: #f1f1f1;
+            }
+            .w-e-text:focus {
+                outline: none;
+            }
+            .w-e-text img {
+                cursor: pointer;
+            }
+            .w-e-text img:hover {
+                box-shadow: 0 0 5px #333;
+            }
+            .w-e-text .w-e-todo {
+                margin: 0 0 0 20px;
+            }
+            .w-e-text .w-e-todo li {
+                list-style: none;
+                font-size: 1em;
+            }
+            .w-e-text .w-e-todo li span:nth-child(1) {
+                position: relative;
+                left: -18px;
+            }
+            .w-e-text .w-e-todo li span:nth-child(1) input {
+                position: absolute;
+                margin-right: 3px;
+            }
+            .w-e-text .w-e-todo li span:nth-child(1) input[type=checkbox] {
+                top: 50%;
+                margin-top: -6px;
+            }
+            .w-e-tooltip {
+                position: absolute;
+                display: flex;
+                color: #f1f1f1;
+                background-color: rgba(0, 0, 0, 0.75);
+                box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.15);
+                border-radius: 4px;
+                padding: 4px 5px 6px;
+                justify-content: center;
+                align-items: center;
+            }
+            .w-e-tooltip-up::after {
+                content: "";
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                margin-left: -5px;
+                border: 5px solid rgba(0, 0, 0, 0);
+                border-top-color: rgba(0, 0, 0, 0.73);
+            }
+            .w-e-tooltip-down::after {
+                content: "";
+                position: absolute;
+                bottom: 100%;
+                left: 50%;
+                margin-left: -5px;
+                border: 5px solid rgba(0, 0, 0, 0);
+                border-bottom-color: rgba(0, 0, 0, 0.73);
+            }
+            .w-e-tooltip-item-wrapper {
+                cursor: pointer;
+                font-size: 14px;
+                margin: 0 5px;
+            }
+            .w-e-tooltip-item-wrapper:hover {
+                color: #ccc;
+                text-decoration: underline;
+            }
+
         </style>
 
-        <table border="1">
-            <tbody>
-            <tr>
-                <td colspan="9"><p>课程团队主要成员</p>
-                    <p>（序号 1 为课程负责人，课程负责人及团队其他主要成员总人数限 5 人之内）</p></td>
-            </tr>
-            <tr>
-                <td><p>序号</p></td>
-                <td><p>姓名</p></td>
-                <td><p>学院</p></td>
-                <td><p>出生年月</p></td>
-                <td><p>职务</p></td>
-                <td><p>职称</p></td>
-                <td><p>手机号码</p></td>
-                <td><p>电子邮箱</p></td>
-                <td><p>教学任务</p></td>
-            </tr>
-            <tr>
-                <td><p><br></p>
-                    <p>1</p></td>
-                <td><p>徐翔宇</p></td>
-                <td><p>城建</p></td>
-                <td><p>1983.0</p>
-                    <p>7</p></td>
-                <td><p>实验实训中 </p>
-                    <p><br></p>
-                    <p>心主任</p></td>
-                <td><p><br></p>
-                    <p>副教授</p></td>
-                <td><p>13487090958</p></td>
-                <td><p>786583@qq</p>
-                    <p>.com</p></td>
-                <td><p>方案设计</p></td>
-            </tr>
-            <tr>
-                <td><p><br></p>
-                    <p>2</p></td>
-                <td><p>刘娅婷</p></td>
-                <td><p>城建</p></td>
-                <td><p>1987.1</p>
-                    <p>0</p></td>
-                <td><p>无</p></td>
-                <td><p>讲师</p></td>
-                <td><p>18963990895</p></td>
-                <td><p>371905781</p>
-                    <p>@qq.com</p></td>
-                <td><p>结构分析</p></td>
-            </tr>
-            <tr>
-                <td><p><br></p>
-                    <p>3</p></td>
-                <td><p><br></p>
-                    <p>胡高茜</p></td>
-                <td><p><br></p>
-                    <p>城建</p></td>
-                <td><p>1982.0</p>
-                    <p>5</p></td>
-                <td><p><br></p>
-                    <p>无</p></td>
-                <td><p><br></p>
-                    <p>副教授</p></td>
-                <td><p><br></p>
-                    <p>18995638161</p></td>
-                <td><p>31682379@</p>
-                    <p>qq.com</p></td>
-                <td><p><br></p>
-                    <p>结构建模</p></td>
-            </tr>
-            <tr>
-                <td><p><br></p>
-                    <p>4</p></td>
-                <td><p>卫军</p></td>
-                <td><p>城建</p></td>
-                <td><p>1957.0</p>
-                    <p>6</p></td>
-                <td><p><br></p>
-                    <p>特聘教授</p></td>
-                <td><p>教授</p></td>
-                <td><p>13808659982</p></td>
-                <td><p>495569397</p>
-                    <p>@qq.com</p></td>
-                <td><p>技术指导</p></td>
-            </tr>
-            <tr>
-                <td><p><br></p>
-                    <p>5</p></td>
-                <td><p>冯仲仁</p></td>
-                <td><p>城建</p></td>
-                <td><p>1962.0</p>
-                    <p>8</p></td>
-                <td><p>院长</p></td>
-                <td><p>教授</p></td>
-                <td><p>19307180589</p></td>
-                <td><p>443466604</p>
-                    <p>@qq.com</p></td>
-                <td><p>理论指导</p></td>
-            </tr>
-            </tbody>
-        </table>
+        <div class="w-e-text">
+            <table style="margin: 0 auto" border="1">
+                <tbody><tr>
+                    <td colspan="11">
+                        <p>团队主要成员（含负责人，总人数限5人以内）</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>序号</p>
+                    </td>
+                    <td>
+                        <p>姓名</p>
+                    </td>
+                    <td>
+                        <p>出生年月</p>
+                    </td>
+                    <td colspan="2">
+                        <p>单位</p>
+                    </td>
+                    <td>
+                        <p>职务</p>
+                    </td>
+                    <td>
+                        <p>职称</p>
+                    </td>
+                    <td>
+                        <p>手机</p>
+                        <p>号码</p>
+                    </td>
+                    <td colspan="2">
+                        <p>电子邮箱</p>
+                    </td>
+                    <td>
+                        <p>承担任务</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>1</p>
+                    </td>
+                    <td>
+                        <p>徐翔宇</p>
+                    </td>
+                    <td>
+                        <p>1981.06</p>
+                    </td>
+                    <td colspan="2">
+                        <p>武昌首义学院</p>
+                    </td>
+                    <td>
+                        <p>实验中心主任</p>
+                    </td>
+                    <td>
+                        <p>副教授</p>
+                    </td>
+                    <td>
+                        <p>13487090958</p>
+                    </td>
+                    <td colspan="2">
+                        <p>786583@qq.com</p>
+                    </td>
+                    <td>
+                        <p>方案设计</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>2</p>
+                    </td>
+                    <td>
+                        <p>蒋华</p>
+                    </td>
+                    <td>
+                        <p>1986.06</p>
+                    </td>
+                    <td colspan="2">
+                        <p>武昌首义学院</p>
+                    </td>
+                    <td>
+                        <p>专业负责人</p>
+                    </td>
+                    <td>
+                        <p>副教授</p>
+                    </td>
+                    <td>
+                        <p>18963990895</p>
+                    </td>
+                    <td colspan="2">
+                        <p>371905781@qq.com</p>
+                    </td>
+                    <td>
+                        <p>结构分析</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>3</p>
+                    </td>
+                    <td>
+                        <p>刘娅婷</p>
+                    </td>
+                    <td>
+                        <p>1986.02</p>
+                    </td>
+                    <td colspan="2">
+                        <p>武昌首义学院</p>
+                    </td>
+                    <td>
+                        <p>教师</p>
+                    </td>
+                    <td>
+                        <p>讲师</p>
+                    </td>
+                    <td>
+                        <p>18995638161</p>
+                    </td>
+                    <td colspan="2">
+                        <p>31682379@qq.com</p>
+                    </td>
+                    <td>
+                        <p>结构建模</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>4</p>
+                    </td>
+                    <td>
+                        <p>卫军</p>
+                    </td>
+                    <td>
+                        <p>1957.06</p>
+                    </td>
+                    <td colspan="2">
+                        <p>武昌首义学院</p>
+                    </td>
+                    <td>
+                        <p>特聘教授</p>
+                    </td>
+                    <td>
+                        <p>教授</p>
+                    </td>
+                    <td>
+                        <p>13808659982</p>
+                    </td>
+                    <td colspan="2">
+                        <p>495569397@qq.com</p>
+                    </td>
+                    <td>
+                        <p>技术指导</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>5</p>
+                    </td>
+                    <td>
+                        <p>冯仲仁</p>
+                    </td>
+                    <td>
+                        <p>1962.08</p>
+                    </td>
+                    <td colspan="2">
+                        <p>武昌首义学院</p>
+                    </td>
+                    <td>
+                        <p>院长</p>
+                    </td>
+                    <td>
+                        <p>教授</p>
+                    </td>
+                    <td>
+                        <p>19307180589</p>
+                    </td>
+                    <td colspan="2">
+                        <p>443466604@qq.com</p>
+                    </td>
+                    <td>
+                        <p>理论指导</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="11">
+                        <p>团队其他成员</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>序号</p>
+                    </td>
+                    <td>
+                        <p>姓名</p>
+                    </td>
+                    <td colspan="2">
+                        <p>出生年月</p>
+                    </td>
+                    <td colspan="2">
+                        <p>单位</p>
+                    </td>
+                    <td colspan="2">
+                        <p>职务</p>
+                    </td>
+                    <td>
+                        <p>职称</p>
+                    </td>
+                    <td colspan="2">
+                        <p>承担任务</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>1</p>
+                    </td>
+                    <td>
+                        <p>胡高茜</p>
+                    </td>
+                    <td colspan="2">
+                        <p>1981.06</p>
+                    </td>
+                    <td colspan="2">
+                        <p>武昌首义学院</p>
+                    </td>
+                    <td colspan="2">
+                        <p>教师</p>
+                    </td>
+                    <td>
+                        <p>副教授</p>
+                    </td>
+                    <td colspan="2">
+                        <p>实验教学</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>2</p>
+                    </td>
+                    <td>
+                        <p>陈捷翎</p>
+                    </td>
+                    <td colspan="2">
+                        <p>1995.04</p>
+                    </td>
+                    <td colspan="2">
+                        <p>武昌首义学院</p>
+                    </td>
+                    <td colspan="2">
+                        <p>教师</p>
+                    </td>
+                    <td>
+                        <p>讲师</p>
+                    </td>
+                    <td colspan="2">
+                        <p>在线教学服务</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>3</p>
+                    </td>
+                    <td>
+                        <p>刘山山</p>
+                    </td>
+                    <td colspan="2">
+                        <p><br></p>
+                    </td>
+                    <td colspan="2">
+                        <p><br></p>
+                    </td>
+                    <td colspan="2">
+                        <p><br></p>
+                    </td>
+                    <td>
+                        <p><br></p>
+                    </td>
+                    <td colspan="2">
+                        <p>技术支持</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>4</p>
+                    </td>
+                    <td>
+                        <p>邹思敏</p>
+                    </td>
+                    <td colspan="2">
+                        <p>1983.04</p>
+                    </td>
+                    <td colspan="2">
+                        <p>武昌首义学院</p>
+                    </td>
+                    <td colspan="2">
+                        <p>教师</p>
+                    </td>
+                    <td>
+                        <p>讲师</p>
+                    </td>
+                    <td colspan="2">
+                        <p>实验教学</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>5</p>
+                    </td>
+                    <td>
+                        <p>郭怡楠</p>
+                    </td>
+                    <td colspan="2">
+                        <p>1990.01</p>
+                    </td>
+                    <td colspan="2">
+                        <p>武昌首义学院</p>
+                    </td>
+                    <td colspan="2">
+                        <p>实验员</p>
+                    </td>
+                    <td>
+                        <p>讲师</p>
+                    </td>
+                    <td colspan="2">
+                        <p>在线教学服务</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>6</p>
+                    </td>
+                    <td>
+                        <p>彭洪翠</p>
+                    </td>
+                    <td colspan="2">
+                        <p>1980.10</p>
+                    </td>
+                    <td colspan="2">
+                        <p>武昌首义学院</p>
+                    </td>
+                    <td colspan="2">
+                        <p>实验员</p>
+                    </td>
+                    <td>
+                        <p>讲师</p>
+                    </td>
+                    <td colspan="2">
+                        <p>在线教学服务</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>7</p>
+                    </td>
+                    <td>
+                        <p>段纪成</p>
+                    </td>
+                    <td colspan="2">
+                        <p>1962.11</p>
+                    </td>
+                    <td colspan="2">
+                        <p>武昌首义学院</p>
+                    </td>
+                    <td colspan="2">
+                        <p>教师</p>
+                    </td>
+                    <td>
+                        <p>副教授</p>
+                    </td>
+                    <td colspan="2">
+                        <p>实验教学</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>8</p>
+                    </td>
+                    <td>
+                        <p>余小燕</p>
+                    </td>
+                    <td colspan="2">
+                        <p>1977.12</p>
+                    </td>
+                    <td colspan="2">
+                        <p>武昌首义学院</p>
+                    </td>
+                    <td colspan="2">
+                        <p>教师</p>
+                    </td>
+                    <td>
+                        <p>讲师</p>
+                    </td>
+                    <td colspan="2">
+                        <p>实验教学</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>9</p>
+                    </td>
+                    <td>
+                        <p>徐珩</p>
+                    </td>
+                    <td colspan="2">
+                        <p>1990.02</p>
+                    </td>
+                    <td colspan="2">
+                        <p>武昌首义学院</p>
+                    </td>
+                    <td colspan="2">
+                        <p>教师</p>
+                    </td>
+                    <td>
+                        <p>讲师</p>
+                    </td>
+                    <td colspan="2">
+                        <p>在线教学服务</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p><br></p>
+                    </td>
+                    <td>
+                        <p><br></p>
+                    </td>
+                    <td colspan="2">
+                        <p><br></p>
+                    </td>
+                    <td colspan="2">
+                        <p><br></p>
+                    </td>
+                    <td colspan="2">
+                        <p><br></p>
+                    </td>
+                    <td>
+                        <p><br></p>
+                    </td>
+                    <td colspan="2">
+                        <p><br></p>
+                    </td>
+                </tr>
+                </tbody></table>
+        </div>
         <!--        <div class="imgBoxLinner">-->
         <!--            <h2>-->
         <!--				<span id="">-->
