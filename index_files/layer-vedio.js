@@ -10,8 +10,8 @@ $(function(){
 
 	var vediobox = {
 		ele:'',
-		width:650,
-		height:367,
+		width:850,
+		height:477,
 		pic:'',
 		src:'',
 		init:function(){
