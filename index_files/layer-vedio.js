@@ -11,7 +11,7 @@ $(function(){
 	var vediobox = {
 		ele:'',
 		width:850,
-		height:477,
+		height:478,
 		pic:'',
 		src:'',
 		init:function(){
